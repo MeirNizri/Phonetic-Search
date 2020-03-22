@@ -1,3 +1,9 @@
+/**
+ * Unit tests for first assignment in c++ course.
+ * AUTHOR: Meir Nizri
+ * Date: 2020-03-22
+ */
+ 
 #include "doctest.h"
 #include "PhoneticFinder.hpp"
 using namespace phonetic;
@@ -123,7 +129,7 @@ TEST_CASE("Test combination of letters 1") {
     CHECK(find(text, "komputer") == string("computer"));
     CHECK(find(text, "comfuder") == string("computer"));
     CHECK(find(text, "Scyence") == string("science"));
-    CHECK(find(text, "Science") == string("science"));
+    CHECK(find(text, "Scienke") == string("science"));
     CHECK(find(text, "skyence") == string("science"));
     CHECK(find(text, "sdudent") == string("student"));
     CHECK(find(text, "stutend") == string("student"));
