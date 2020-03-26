@@ -157,3 +157,19 @@ TEST_CASE("Test combination of letters 2") {
     CHECK(find(text, "Mikrozoft") == string("Microsoft"));
     CHECK(find(text, "Miqrosopt") == string("Microsoft"));
 }
+
+TEST_CASE("Test return errors") {
+    string text = "my operating system is windows from Microsoft";
+    CHECK_THROWS(find(text, "Operading"));
+    CHECK_THROWS(find(text, "oferatyng"));
+    CHECK_THROWS(find(text, "oberadyng"));
+    CHECK_THROWS(find(text, "Sysdem"));
+    CHECK_THROWS(find(text, "sistem"));
+    CHECK_THROWS(find(text, "syzdem"));
+    CHECK_THROWS(find(text, "Windowz"));
+    CHECK_THROWS(find(text, "vindows"));
+    CHECK_THROWS(find(text, "wintovz"));
+    CHECK_THROWS(find(text, "Microsopd"));
+    CHECK_THROWS(find(text, "Mikrozoft"));
+    CHECK_THROWS(find(text, "Miqrosopt"));
+}
