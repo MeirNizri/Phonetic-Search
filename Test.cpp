@@ -1,7 +1,10 @@
 /**
- * Unit tests for first assignment in c++ course.
- * AUTHOR: Meir Nizri
- * Date: 2020-03-22
+ * Unit tests for PhoneticFinder
+ * First assignment in cpp course
+ * 
+ * Author: Meir Nizri
+ * Second assignment in cpp course
+ * Date: 2020-03-30
  */
  
 #include "doctest.h"
@@ -72,7 +75,7 @@ TEST_CASE("Test replacement of s and z") {
     CHECK(find(text, "zusan") == string("susan"));
     CHECK(find(text, "Zuzan") == string("susan"));
     CHECK(find(text, "prezent") == string("present"));
-    CHECK(find(text, "presZent") == string("present"));
+    CHECK(find(text, "preZent") == string("present"));
     CHECK(find(text, "preSent") == string("present"));
 }
 
@@ -160,16 +163,10 @@ TEST_CASE("Test combination of letters 2") {
 
 TEST_CASE("Test return errors") {
     string text = "my operating system is windows from Microsoft";
-    CHECK_THROWS(find(text, "Operading"));
-    CHECK_THROWS(find(text, "oferatyng"));
-    CHECK_THROWS(find(text, "oberadyng"));
-    CHECK_THROWS(find(text, "Sysdem"));
-    CHECK_THROWS(find(text, "sistem"));
-    CHECK_THROWS(find(text, "syzdem"));
-    CHECK_THROWS(find(text, "Windowz"));
-    CHECK_THROWS(find(text, "vindows"));
-    CHECK_THROWS(find(text, "wintovz"));
-    CHECK_THROWS(find(text, "Microsopd"));
-    CHECK_THROWS(find(text, "Mikrozoft"));
-    CHECK_THROWS(find(text, "Miqrosopt"));
+    CHECK_THROWS(find(text, "Operaing"));
+    CHECK_THROWS(find(text, "ofratyng"));
+    CHECK_THROWS(find(text, "oberadyngu"));
+    CHECK_THROWS(find(text, "Sysdjem"));
+    CHECK_THROWS(find(text, "    "));
+    CHECK_THROWS(find(text, ""));
 }
